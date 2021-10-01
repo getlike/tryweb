@@ -1,26 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Добавление объявления - Доска объявлений</title>
-</head>
+{% extends "layout/base.html" %}
+
+{% block title %} Добавление объявления {% end title%}
 <body>
-    <h1>Добавление объявления </h1>
-    <div>
-        <a href="{% url 'index' %}">Главная</a>
-        {% for rubric in rubrics %}
-        <a href="{% url 'by_rubric' rubric.pk %}">
-            {{rubric.name}}
-        </a>
-        {% endfor %}
-    </div>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p}}
-        <input type="submit" value="добавить!">
-    </form>
+<h2>Добавление объявления </h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="добавить!">
+</form>
+{% endblock %}
+
 </body>
 </html>
