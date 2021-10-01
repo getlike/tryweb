@@ -1,6 +1,6 @@
-{% extends 'layout/base.html' %}
+{% extends './layout/base.html' %}
 
-{% block title %} {{current_rubric.name}} {% end title%}
+{% block title %} {{current_rubric.name}} {% endblock %}
 {% block content %}
 <h2>Рубрика : {{current_rubric.name}} </h2>
 {% for bb in bbs %}
